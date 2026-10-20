@@ -1,0 +1,15 @@
+{{#savePostId}}
+<section id="save-collection" class="container framed panel">
+    <h2>Save to collection</h2>
+    <form method="post" action="/collections/save">
+        <input type="hidden" name="postId" value="{{savePostId}}">
+        <label for="collection">Choose your private collection</label>
+        <select name="collectionId" id="collection" class="short-input" required>
+            <option value="">Select a collection</option>
+            {{#collections}}<option value="{{collectionId}}">{{name}}</option>{{/collections}}
+        </select>
+        <button class="action-button" type="submit">Save to collection</button>
+    </form>
+    <a href="/collections">Create or manage collections</a>
+</section>
+{{/savePostId}}

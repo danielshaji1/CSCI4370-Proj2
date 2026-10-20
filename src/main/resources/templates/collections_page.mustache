@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> fragments/html_header}}
+<body>
+{{> fragments/top_bar}}
+<main class="container">
+    <h1>My collections</h1>
+    <p>Organize posts into private reading lists. A post can be saved in more than one collection.</p>
+    <form method="post" action="/collections" class="framed panel">
+        <h2>Create a collection</h2>
+        <label for="name">Name</label>
+        <input id="name" name="name" class="short-input full" required maxlength="80" placeholder="Campus ideas">
+        <label for="description">Description (optional)</label>
+        <input id="description" name="description" class="short-input full" maxlength="255" placeholder="What will you save here?">
+        <button class="action-button" type="submit">Create collection</button>
+    </form>
+    {{#collections}}
+    <article class="framed panel">
+        <h2><a href="/collections/{{collectionId}}">{{name}}</a></h2>
+        <p>{{description}}</p>
+        <p>{{postCount}} posts · Created {{createdAt}}</p>
+    </article>
+    {{/collections}}
+    {{^collections}}<p>You have no collections yet. Create one, then open a post and choose “Save to collection.”</p>{{/collections}}
+</main>
+{{> fragments/footer}}
+</body>
+</html>

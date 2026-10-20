@@ -1,0 +1,24 @@
+USE csx370_mb_platform;
+SHOW TABLES;
+SHOW CREATE TABLE user;
+SHOW CREATE TABLE post;
+SHOW CREATE TABLE follow;
+SHOW CREATE TABLE post_like;
+SHOW CREATE TABLE bookmark;
+SHOW CREATE TABLE comment;
+SHOW CREATE TABLE hashtag;
+SHOW CREATE TABLE post_hashtag;
+SHOW CREATE TABLE saved_collection;
+SHOW CREATE TABLE collection_post;
+-- Display meaningful data without showing password hashes on the recording.
+SELECT userId, username, firstName, lastName FROM user;
+SELECT * FROM post ORDER BY createdAt DESC, postId DESC;
+SELECT * FROM follow;
+SELECT * FROM post_like;
+SELECT * FROM bookmark;
+SELECT * FROM comment ORDER BY createdAt, commentId;
+SELECT * FROM hashtag;
+SELECT * FROM post_hashtag;
+SELECT * FROM saved_collection;
+SELECT * FROM collection_post;
+SHOW VARIABLES LIKE '%time_zone%';

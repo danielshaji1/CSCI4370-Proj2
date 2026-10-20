@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> fragments/html_header}}
+<body>
+{{> fragments/top_bar}}
+<main class="container">
+    <a href="/collections">All collections</a>
+    <h1>{{collection.name}}</h1>
+    <p>{{collection.description}}</p>
+    <p>Private · {{collection.postCount}} saved posts · Most recent posts first</p>
+    <details class="framed panel">
+        <summary>Edit collection</summary>
+        <form method="post" action="/collections/{{collection.collectionId}}/update">
+            <label for="name">Name</label>
+            <input id="name" name="name" class="short-input full" value="{{collection.name}}" maxlength="80" required>
+            <label for="description">Description</label>
+            <input id="description" name="description" class="short-input full" value="{{collection.description}}" maxlength="255">
+            <button class="action-button" type="submit">Save collection details</button>
+        </form>
+        <form method="post" action="/collections/{{collection.collectionId}}/delete" class="delete-collection">
+            <p>Deleting this collection removes its saved links. The original posts stay on the platform.</p>
+            <button class="action-button" type="submit">Delete collection</button>
+        </form>
+    </details>
+    {{#posts}}
+    {{> fragments/post}}
+    <form method="post" action="/collections/{{collectionId}}/posts/{{postId}}/remove" class="collection-remove">
+        <button class="action-button" type="submit">Remove from collection</button>
+    </form>
+    {{/posts}}
+    {{^posts}}<p>No posts here yet. Open a post from any feed to save it here.</p>{{/posts}}
+</main>
+{{> fragments/footer}}
+</body>
+</html>

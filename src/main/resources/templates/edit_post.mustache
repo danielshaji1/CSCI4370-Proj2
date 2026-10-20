@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> fragments/html_header}}
+<body>
+{{> fragments/top_bar}}
+<main class="container framed post-form">
+    <h1>Edit post</h1>
+    <form method="post" action="/post/{{post.postId}}/edit">
+        <label for="content">Post content (up to 500 characters)</label>
+        <textarea id="content" name="content" class="framed" required maxlength="500" rows="5">{{post.content}}</textarea>
+        <button type="submit" class="action-button">Save changes</button>
+        <a href="/post/{{post.postId}}">Cancel</a>
+    </form>
+    <div class="clear"></div>
+</main>
+{{> fragments/footer}}
+</body>
+</html>

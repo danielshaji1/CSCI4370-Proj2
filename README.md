@@ -60,9 +60,21 @@ CONFIGURATION
 src/main/resources/application.properties defaults to:
    jdbc:mysql://localhost:33306/csx370_mb_platform
    MySQL username root
-Set SPRING_DATASOURCE_PASSWORD in your shell environment. To override the other
-settings, use SPRING_DATASOURCE_URL and SPRING_DATASOURCE_USERNAME. Do not commit
-database credentials to source control.
+   MySQL password mysqlpass (shared classroom default)
+No environment variables are required for the instructor's standard Docker setup.
+For a different setup, override these defaults with SPRING_DATASOURCE_URL,
+SPRING_DATASOURCE_USERNAME, and SPRING_DATASOURCE_PASSWORD in the terminal used
+to start Maven. Keep personal database credentials out of source control.
+Restart the app after changing these settings.
+
+If login reports that it cannot reach the database, check the Maven terminal's
+"Caused by:" message. "Access denied" means credentials or permissions are wrong;
+"Communications link failure" means to check the container and host port mapping;
+"Unknown database" or a missing user table means to run the fresh setup above.
+Cloning copies the SQL files, but does not import them into the new device's MySQL.
+Stale SPRING_DATASOURCE_* variables override the classroom defaults, so remove
+or correct them if the connection still fails with the standard Docker setup.
+
 Windows command prompt startup:
    mvn spring-boot:run -D"spring-boot.run.arguments=--server.port=8081"
 Windows PowerShell startup:
@@ -171,7 +183,7 @@ Record a narrated video in Chrome showing compilation/startup, each feature, pop
 data, and all tables/types/constraints. Follow docs/DEMO_GUIDE.md. Save the actual recording
 as deliverables/demo.mp4. Obtain the official contribution form from eLC, have every team
 member sign it, and place the completed file at deliverables/contribution_form.pdf.
-Complete the team section above. Export the actual database, then package:
+Record each member's contributions in Readme.txt. Export the actual database, then package:
    python3 scripts/package_submission.py
 The package script requires the video, signed-form file, and completed team section before
 it creates submission.zip. Check the form's signatures and video narration yourself.

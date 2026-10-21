@@ -19,7 +19,7 @@ if not args.draft:
 if missing:
     raise SystemExit('Missing required deliverables: ' + ', '.join(missing))
 
-items = required + ['schema.sql', 'update_database.sql']
+items = required + ['README.md', 'schema.sql', 'update_database.sql']
 for folder in ['src', 'scripts', 'docs', 'deliverables']:
     if (root / folder).exists():
         items.extend(str(p.relative_to(root)) for p in (root / folder).rglob('*') if p.is_file()

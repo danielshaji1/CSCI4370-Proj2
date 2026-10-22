@@ -6,7 +6,7 @@ TEAM CONTRIBUTIONS:
 1. Daniel Shaji - (dks59357): I added the ability to store amount of likes and comments on each individual post.
 2. Lucas Patsy - (lsp41296): I helped make the additional demo posts.
 3. Dhaval Pucha (dp68186) -  I created the collections page / unique feature. 
-4. NAME () - ER Diagram creation. Also developed the saving of time/date with post into the MySQL database.
+4. Brendan Sheppard (bjs47815) - ER Diagram creation. Also developed the saving of time/date with post into the MySQL database.
 5. Iliya Shapirov - Created hashtags features and login saves. Bug fixed sql grammar errors.
 
 

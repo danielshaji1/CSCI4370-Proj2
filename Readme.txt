@@ -3,7 +3,8 @@ CSCI 4370 PROJ 2 Readme.txt
 
 TEAM CONTRIBUTIONS:
 
-Daniel Shaji - (dks59357): I added the ability to store amount of likes and comments on each individual post. 
+Daniel Shaji - (dks59357): I added the ability to store amount of likes and comments on each individual post.
+Lucas Patsy - (lsp41296): I helped make the additional demo posts.
 
 
 
